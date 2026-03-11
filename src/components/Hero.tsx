@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
-  const fullText = "WAKE UP, NEO... THE MATRIX HAS YOU... FOLLOW THE WHITE RABBIT, AND CHECK OUT ALAN'S REPOS DOWN BELOW.";
+  const fullText = "WAKE UP, NEO... THE MATRIX HAS YOU... FOLLOW THE WHITE RABBIT... AND CHECK OUT ALAN'S REPOS DOWN BELOW.";
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
   }, [index]);
 
   return (
-    <Box id="home" component="section" sx={{ textAlign: 'center' }}>
+    <Box id="hero" component="section" sx={{ textAlign: 'center' }}>
       <Container maxWidth="md">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             I'm a frontend engineer with 6+ years of experience in React and TypeScript. 
             Lately, I've been building AI tools that integrate smoothly into any website. 
             I enjoy turning complex AI capabilities into simple, high-performance experiences 
-            that anyone can use. Take a look at my projects below!
+            that anyone can use. Also I enjoy creating animations and interactive elements to make the user experience more engaging and fun. Take a look at my projects below!
           </Typography>
         </motion.div>
       </Container>

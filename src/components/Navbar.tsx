@@ -3,11 +3,10 @@ import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/materi
 
 const Navbar: React.FC = () => {
   const navItems = [
-    { label: 'Home', id: 'home' },
-    { label: 'GitHub', id: 'github' },
-    { label: 'Live Demos', id: 'demos' },
-    { label: 'Experience', id: 'experience' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'HOME', id: 'hero' },
+    { label: 'PROJECTS', id: 'projects' },
+    { label: 'EXPERIENCE', id: 'experience' },
+    { label: 'CONTACT', id: 'contact' },
   ];
 
   const scrollToSection = (id: string) => {

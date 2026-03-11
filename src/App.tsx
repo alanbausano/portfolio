@@ -7,22 +7,73 @@ import ProjectCard from './components/ProjectCard';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const githubProjects = [
-  { title: "Neo_Core", description: "A high-performance microservices framework built with Node.js and TypeScript. Features advanced caching and real-time monitoring.", tags: ["Node.js", "TypeScript", "Redis"], githubUrl: "https://github.com/alanbausano" },
-  { title: "Zion_UI", description: "Atomic design component library with Material UI and Framer Motion. Focused on performance and modularity.", tags: ["React", "MUI", "Framer Motion"], githubUrl: "https://github.com/alanbausano" },
-  { title: "Sentinel_API", description: "GraphQL API Gateway for secure and scalable data fetching across distributed systems.", tags: ["GraphQL", "Apollo", "Express"], githubUrl: "https://github.com/alanbausano" },
-  { title: "Oracle_Data", description: "Data visualization dashboard for real-time analytics using D3.js and WebSockets.", tags: ["D3.js", "WebSockets", "React"], githubUrl: "https://github.com/alanbausano" },
-  { title: "Rabbit_Hole", description: "A deep learning experiment for sequence prediction using TensorFlow.js in the browser.", tags: ["TensorFlow.js", "React", "AI"], githubUrl: "https://github.com/alanbausano" },
-  { title: "Agent_Smith_JS", description: "A collection of utility functions for DOM manipulation and state management with zero dependencies.", tags: ["JavaScript", "Vanilla", "Performance"], githubUrl: "https://github.com/alanbausano" },
+const projects = [
+  { 
+    title: "AI Employee Performance", 
+    description: "A data-driven platform for measuring and improving employee performance through AI-generated insights and metrics.", 
+    tags: ["TypeScript", "React", "Node.js", "AI Analytics", "GROQ"], 
+    githubUrl: "https://github.com/alanbausano/ai-employee-performance",
+    demoUrl: "https://ai-employee-performance.vercel.app/employees"
+  },
+  { 
+    title: "AI Form Assistant", 
+    description: "Intelligent form handling and validation using AI to streamline data entry and improve user experience.", 
+    tags: ["React", "AI", "Formik", "Vercel", "AI reformatting", "GROQ"], 
+    githubUrl: "https://github.com/alanbausano/ai-form-assistant",
+    demoUrl: "https://ai-form-assistant-coral.vercel.app/"
+  },
+  { 
+    title: "Nexus Land", 
+    description: "Landing page concept for gaming industry, featuring CSS-only animations and an interactive user experience.", 
+    tags: ["React 19", "TypeScript", "Tailwind CSS 4", "Vite"], 
+    githubUrl: "https://github.com/alanbausano/nexus-land",
+    demoUrl: "https://nexus-sable-six.vercel.app/"
+  },
 ];
 
-const liveDemos = [
-  { title: "Nebuchadnezzar_OS", description: "A terminal-themed operating system simulation with real-time process monitoring and file system explorer.", tags: ["React", "PostgreSQL", "TypeORM"], demoUrl: "https://example.com" },
-  { title: "Matrix_Store", description: "Full-stack e-commerce platform with stripe integration and dynamic inventory management.", tags: ["Next.js", "Stripe", "Prisma"], demoUrl: "https://example.com" },
-  { title: "Glitch_Chat", description: "End-to-end encrypted messaging app with ephemeral rooms and voice support.", tags: ["Socket.io", "WebRTC", "React"], demoUrl: "https://example.com" },
-  { title: "Code_Breaker", description: "Interactive coding challenge platform with real-time execution environment.", tags: ["React", "Node.js", "Docker"], demoUrl: "https://example.com" },
-  { title: "Morpheus_Music", description: "Lossless audio streaming service with spatial audio support and social playlist sharing.", tags: ["WebAudio", "Firebase", "React"], demoUrl: "https://example.com" },
-  { title: "The_Construct", description: "A 3D portfolio template builder using Three.js and React Three Fiber.", tags: ["Three.js", "R3F", "Typescript"], demoUrl: "https://example.com" },
+const experience = [
+  {
+    role: "Front-End Developer",
+    company: "Glofy",
+    period: "March 2025 – Present",
+    description: "Developing complex booking systems, price negotiation logic, and waitlists for a large-scale golf reservation platform using Next.js and TanStack Query.",
+    tech: "React, TypeScript, Next.js (App Router), TanStack Query, NeonDB"
+  },
+  {
+    role: "Front-End Developer",
+    company: "YPF",
+    period: "September 2024 – March 2025",
+    description: "Built mobile-first UIs and integrated APIs for a critical industrial records tool used in oil field documentation and task management.",
+    tech: "React, Redux Toolkit, TypeScript, MaterialUI, .Net, SQL"
+  },
+  {
+    role: "Front-End Developer",
+    company: "Eleks",
+    period: "March 2023 – September 2024",
+    description: "Collaborated on a logistics tool for lighting product ordering, focusing on accessible UI components and performance optimizations.",
+    tech: "React, React-Query, TypeScript, MaterialUI, Styled-components"
+  },
+  {
+    role: "Front-End Developer",
+    company: "Scrap at Magnético",
+    period: "March 2021 – March 2023",
+    description: "Led the UI development and refactoring for a recycling logistics platform, providing mentorship to junior developers and optimizing API requests.",
+    tech: "React, React-Query, TypeScript, AntDesign, PostgreSQL"
+  },
+  {
+    role: "Front-End Developer",
+    company: "Metegol at Magnético",
+    period: "December 2021 – December 2022",
+    description: "Developed a comprehensive backoffice tool for entertainment statistics and implemented testing suites for cleaner code quality.",
+    tech: "React, React Native, React-Query, Jest, Styled-components"
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "Academia at Magnético",
+    period: "February 2020 – March 2021",
+    description: "Created educational platform interfaces and secure backend endpoints, focusing on video performance and data validation.",
+    tech: "React, Node, Express, TypeORM, PostgreSQL, Joi"
+  }
 ];
 
 const App: React.FC = () => {
@@ -33,32 +84,16 @@ const App: React.FC = () => {
       
       <Hero />
 
-      {/* GitHub Projects Section */}
-      <Box id="github" component="section">
+      {/* Projects Section */}
+      <Box id="projects" component="section">
         <Container maxWidth="lg">
           <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.75rem' } }}>
-            {'>'} REPOS_ARCHIVE
+            {'>'} MISSION_PROJECTS
           </Typography>
-          <Grid container spacing={4}>
-            {githubProjects.map((project, index) => (
+          <Grid container spacing={4} justifyContent="center">
+            {projects.map((project, index) => (
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                 <ProjectCard {...project} />
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Live Demos Section */}
-      <Box id="demos" component="section">
-        <Container maxWidth="lg">
-          <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.75rem' } }}>
-            {'>'} ACTIVE_TRANSMISSIONS
-          </Typography>
-          <Grid container spacing={4}>
-            {liveDemos.map((demo, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-                <ProjectCard {...demo} />
               </Grid>
             ))}
           </Grid>
@@ -72,26 +107,26 @@ const App: React.FC = () => {
             {'>'} PROFESSIONAL_TIMELINE
           </Typography>
           <Paper elevation={0} sx={{ p: 4, backgroundColor: 'transparent', borderLeft: '2px solid #008F11' }}>
-            <Box sx={{ mb: 4 }}>
-              <Typography variant="h5" color="primary">Senior Front-End Engineer</Typography>
-              <Typography variant="subtitle1" color="text.secondary">Present | Remote</Typography>
-              <Typography variant="body1" sx={{ mt: 1 }}>
-                Developing high-performance React applications, optimizing bundle sizes, and mentoring junior developers.
-              </Typography>
-            </Box>
-            <Divider sx={{ my: 3, borderColor: '#008F11' }} />
-            <Box sx={{ mb: 4 }}>
-              <Typography variant="h5" color="primary">Full-Stack Developer</Typography>
-              <Typography variant="subtitle1" color="text.secondary">Earlier Years | Tech Solutions Inc.</Typography>
-              <Typography variant="body1" sx={{ mt: 1 }}>
-                Built and maintained complex APIs with Node.js and SQL while delivering responsive UIs with React and Redux.
-              </Typography>
-            </Box>
-            <Divider sx={{ my: 3, borderColor: '#008F11' }} />
-            <Box>
+            {experience.map((exp, index) => (
+              <React.Fragment key={index}>
+                <Box sx={{ mb: 4 }}>
+                  <Typography variant="h5" color="primary">{exp.role}</Typography>
+                  <Typography variant="subtitle1" color="text.secondary">{exp.period} | {exp.company}</Typography>
+                  <Typography variant="body1" sx={{ mt: 1 }}>
+                    {exp.description}
+                  </Typography>
+                  <Typography variant="caption" sx={{ display: 'block', mt: 1, opacity: 0.7 }}>
+                    Stack: {exp.tech}
+                  </Typography>
+                </Box>
+                {index < experience.length - 1 && <Divider sx={{ my: 3, borderColor: '#008F11', opacity: 0.3 }} />}
+              </React.Fragment>
+            ))}
+            
+            <Box sx={{ mt: 6 }}>
               <Typography variant="h5" color="primary">Core Technologies</Typography>
               <Typography variant="body1" sx={{ mt: 2 }}>
-                React, TypeScript, Next.js, Redux, Node, Express, PostgreSQL, MySQL, Jest, MaterialUI, Tailwind, AntD.
+                React, TypeScript, Next.js, Redux, Node, Express, PostgreSQL, MySQL, NeonDB, TanStack Query, Jest, MaterialUI, Tailwind, AntD.
               </Typography>
             </Box>
           </Paper>
