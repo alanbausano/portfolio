@@ -37,14 +37,14 @@ const experience = [
     company: "Glofy",
     period: "March 2025 – Present",
     description: "Developing complex booking systems, price negotiation logic, and waitlists for a large-scale golf reservation platform using Next.js and TanStack Query.",
-    tech: "React, TypeScript, Next.js (App Router), TanStack Query, NeonDB"
+    tech: "Next, React, TypeScript, TanStack Query, NeonDB"
   },
   {
     role: "Front-End Developer",
     company: "YPF",
     period: "September 2024 – March 2025",
     description: "Built mobile-first UIs and integrated APIs for a critical industrial records tool used in oil field documentation and task management.",
-    tech: "React, Redux Toolkit, TypeScript, MaterialUI, .Net, SQL"
+    tech: "Next, React, Redux Toolkit, TypeScript, MaterialUI, .Net, SQL"
   },
   {
     role: "Front-End Developer",

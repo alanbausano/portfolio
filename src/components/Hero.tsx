@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             {text}<span className="cursor">|</span>
           </Typography>
           <Typography variant="body1" sx={{ maxWidth: '600px', mx: 'auto', textAlign: 'justify' }}>
-            I'm a frontend engineer with 6+ years of experience in React and TypeScript. 
+            I'm a frontend engineer with 6+ years of experience in Next, React and TypeScript. 
             Lately, I've been building AI tools that integrate smoothly into any website. 
             I enjoy turning complex AI capabilities into simple, high-performance experiences 
             that anyone can use. Also I enjoy creating animations and interactive elements to make the user experience more engaging and fun. Take a look at my projects below!
