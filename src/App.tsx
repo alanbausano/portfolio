@@ -9,6 +9,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const projects = [
   { 
+    title: "Los Caminantes", 
+    description: "Full-stack loyalty platform for a burger restaurant. Features a responsive landing page, interactive menu, and a loyalty dashboard with QR scanning and rewards tracking.", 
+    tags: ["React 19", "Express", "Prisma", "PostgreSQL", "MUI", "Framer Motion", "React Query"], 
+    demoUrl: "https://loscaminantes.com.ar/",
+    isPrivate: true
+  },
+  { 
     title: "AI Employee Performance", 
     description: "A data-driven platform for measuring and improving employee performance through AI-generated insights and metrics.", 
     tags: ["TypeScript", "React", "Node.js", "AI Analytics", "GROQ"], 
@@ -90,9 +97,9 @@ const App: React.FC = () => {
           <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6, fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.75rem' } }}>
             {'>'} MISSION_PROJECTS
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={6} justifyContent="center">
             {projects.map((project, index) => (
-              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+              <Grid size={{ xs: 12, sm: 6 }} key={index}>
                 <ProjectCard {...project} />
               </Grid>
             ))}

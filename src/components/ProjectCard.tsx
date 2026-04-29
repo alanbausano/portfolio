@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardActions, Typography, Button, Box } from '@mui/material';
+import { Card, CardContent, CardActions, Typography, Button, Box, Tooltip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
 
@@ -9,9 +9,10 @@ interface ProjectCardProps {
   githubUrl?: string;
   demoUrl?: string;
   tags: string[];
+  isPrivate?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, githubUrl, demoUrl, tags }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, githubUrl, demoUrl, tags, isPrivate }) => {
   return (
     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <CardContent sx={{ flexGrow: 1 }}>
@@ -30,10 +31,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, githubUrl
         </Box>
       </CardContent>
       <CardActions sx={{ justifyContent: 'space-between', p: 2 }}>
-        {githubUrl && (
-          <Button size="small" startIcon={<GitHubIcon />} onClick={() => window.open(githubUrl, '_blank')}>
-            Repo
-          </Button>
+        {isPrivate ? (
+          <Tooltip title="This repository is private as it belongs to a client project." arrow>
+            <span>
+              <Button size="small" startIcon={<GitHubIcon />} disabled>
+                Repo
+              </Button>
+            </span>
+          </Tooltip>
+        ) : (
+          githubUrl && (
+            <Button size="small" startIcon={<GitHubIcon />} onClick={() => window.open(githubUrl, '_blank')}>
+              Repo
+            </Button>
+          )
         )}
         {demoUrl && (
           <Button size="small" startIcon={<LaunchIcon />} variant="outlined" onClick={() => window.open(demoUrl, '_blank')}>
